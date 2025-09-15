@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warfarin Calculator RJ2</title>
+
+  <!-- Favicon & Manifest -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 font-prompt">
+
+  <div class="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg relative">
+
+    <!-- Badge -->
+    <div class="absolute top-7 right-7">
+      <span class="bg-yellow-100 text-blck-700 text-xs font-semibold px-2.5 py-1 rounded-lg">
+        Warfarin Clinic RJ2
+      </span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="text-2xl font-bold mb-6 text-center text-white bg-red-700 p-4 rounded-xl shadow">
+      Warfarin Calculator Program
+    </h1>
+
+    <!-- Embedded Canva -->
+    <div class="max-w-4xl mx-auto mb-6">
+      <div class="relative w-full pt-[56.25%] shadow-md rounded-lg overflow-hidden">
+        <iframe 
+          loading="lazy"
+          class="absolute inset-0 w-full h-full border-0"
+          src="https://www.canva.com/design/DAGy8rq_hl8/ZBU3FLiEFY3q5_UyxL6sHA/view?embed"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <a 
+        href="https://www.canva.com/design/DAGy8rq_hl8/ZBU3FLiEFY3q5_UyxL6sHA/view?utm_content=DAGy8rq_hl8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha0412a643f" 
+        target="_blank" 
+        rel="noopener" 
+        class="block text-center text-xs text-gray-500 mt-2 hover:text-blue-600"
+      ></a>
+    </div>
+
+    <hr class="my-6 border-gray-300">
+
+    <!-- Dose Inputs -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div>
+        <label for="previousDoseInput" class="block text-gray-700 text-sm font-bold mb-2">
+          ขนาดยาปัจจุบัน (mg/week) </br> [ก่อนปรับยา]
+        </label>
+        <input 
+          type="number" id="previousDoseInput"
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          step="0.1" min="0"
+        >
+      </div>
+      <div>
+        <label for="weeklyDoseInput" class="block text-gray-700 text-sm font-bold mb-2">
+          ขนาดยาใหม่ (mg/week) </br> [หลังปรับยา]
+        </label>
+        <input 
+          type="number" id="weeklyDoseInput"
+          class="w-full border border-gray-300 px-3 py-2 rounded-lg bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600"
+          step="0.1" min="0"
+        >
+      </div>
+      <div class="flex items-center pt-4 md:pt-7">
+        <input 
+          type="checkbox" id="allowHalf" checked
+          class="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500 accent-indigo-600"
+        >
+        <label for="allowHalf" class="ml-2 text-gray-700 text-sm font-bold">
+          ผู้ป่วยสามารถ * หัก/แบ่ง * เม็ดยาได้
+        </label>
+      </div>
+    </div>
+
+    <!-- Pill Selection -->
+    <div class="my-4 pt-2">
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">
+        เลือกขนาดยาที่ใช้
+      </label>
+      <!-- warfarin 1 mg -->
+      <!-- <div id="pillSelection" class="flex justify-center gap-x-3 sm:gap-x-6 flex-wrap">
+        <div class="flex items-center">
+          <input type="checkbox" id="pill-1" value="1" class="pill-checkbox form-checkbox h-5 w-5 text-blue-600 accent-indigo-600">
+          <label for="pill-1" class="ml-2 flex items-center gap-x-2 cursor-pointer">
+            <span class="pill pill-1"></span> Warfarin 1 mg
+          </label>
+        </div> -->
+        <!-- warfarin 2 mg -->
+         <div id="pillSelection" class="flex justify-center gap-x-3 sm:gap-x-6 flex-wrap">
+        <div class="flex items-center">
+          <input type="checkbox" id="pill-2" value="2" class="pill-checkbox form-checkbox h-5 w-5 text-blue-600 accent-indigo-600" >
+          <label for="pill-2" class="ml-2 flex items-center gap-x-2 cursor-pointer">
+            <span class="pill pill-2"></span> Warfarin 2 mg
+          </label>
+        </div>
+        <!-- warfarin 3 mg -->
+        <div class="flex items-center">
+          <input type="checkbox" id="pill-3" value="3" class="pill-checkbox form-checkbox h-5 w-5 text-blue-600 accent-indigo-600" >
+          <label for="pill-3" class="ml-2 flex items-center gap-x-2 cursor-pointer">
+            <span class="pill pill-3"></span> Warfarin 3 mg
+          </label>
+        </div>
+        <!-- warfarin 5 mg -->
+        <div class="flex items-center">
+          <input type="checkbox" id="pill-5" value="5" class="pill-checkbox form-checkbox h-5 w-5 text-blue-600 accent-indigo-600" >
+          <label for="pill-5" class="ml-2 flex items-center gap-x-2 cursor-pointer">
+            <span class="pill pill-5"></span> Warfarin 5 mg
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-6 border-gray-300">
+
+    <!-- Special Day Pattern -->
+    <div class="my-4 pt-2">
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">รูปแบบวัน</label>
+      <div class="flex justify-center gap-x-4 sm:gap-x-8">
+        <div class="flex items-center">
+          <input type="radio" id="patternFriSun" name="specialDayPattern" value="fri-sun" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600" checked>
+          <label for="patternFriSun" class="ml-2 text-gray-700">ศุกร์/เสาร์/อาทิตย์ (ค่าเริ่มต้น)</label>
+        </div>
+        <div class="flex items-center">
+          <input type="radio" id="patternMonWedFri" name="specialDayPattern" value="mon-wed-fri" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600">
+          <label for="patternMonWedFri" class="ml-2 text-gray-700">กระจายขนาดยา (จันทร์/พุธ/ศุกร์)</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dose Adjustment Table -->
+    <div id="adjustmentTable" class="my-4"></div>
+    <div class="flex justify-center">
+      <button 
+        id="showBtn"
+        class="bg-blue-600 text-white px-4 py-2 rounded-lg mb-4 w-full md:w-auto hover:bg-blue-700 transition duration-150 ease-in-out shadow-md flex items-center justify-center"
+      >
+        แสดงตัวเลือก
+      </button>
+    </div>
+
+    <div id="percentageChange" class="text-center my-4" aria-live="polite"></div>
+
+    <hr class="my-6 border-gray-300">
+
+    <!-- Appointment Toggle -->
+    <div class="flex items-center justify-center">
+      <input type="checkbox" id="appointmentToggle" class="form-checkbox h-5 w-5 text-blue-600 rounded focus:ring-blue-500 accent-indigo-600">
+      <label for="appointmentToggle" class="ml-2 text-gray-800 font-bold">คำนวณจำนวนยาที่ใช้</label>
+    </div>
+    <p class="text-center text-xs text-gray-500 mt-1">
+    </p>
+
+    <!-- Appointment Fields -->
+    <div id="appointmentFields" class="hidden mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="startDate" class="block text-gray-700 text-sm font-bold mb-2">วันที่เริ่มต้น (วันที่มา):</label>
+          <input type="date" id="startDate" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label for="endDate" class="block text-gray-700 text-sm font-bold mb-2">วันนัดครั้งถัดไป:</label>
+          <input type="date" id="endDate" class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+      <div id="daysResult" class="text-center text-lg font-semibold mb-4 text-gray-700" aria-live="polite"></div>
+    </div>
+
+    <hr class="my-6 border-gray-300">
+
+    <!-- Display Order -->
+    <div class="my-4 pt-2">
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">การจัดเรียงวัน</label>
+      <div class="flex justify-center gap-x-4 sm:gap-x-8">
+        <div class="flex items-center">
+          <input type="radio" id="displaySunSat" name="displayOrder" value="sun-sat" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600" checked>
+          <label for="displaySunSat" class="ml-2 text-gray-700">อาทิตย์ - เสาร์ (ค่าเริ่มต้น)</label>
+        </div>
+        <div class="flex items-center">
+          <input type="radio" id="displayMonSun" name="displayOrder" value="mon-sun" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600">
+          <label for="displayMonSun" class="ml-2 text-gray-700">จันทร์ - อาทิตย์</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="space-y-4 mt-6" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <div class="text-right text-xs text-gray-400 mt-6 pt-4 border-t border-gray-200">
+      <p>Design by Jedsadakorn T.</p>
+      <p>Pharmacy, Rajavithi 2 (Rangsit) Hospital</p>
+    </div>
+  </div>
+
+  <!-- Main Script -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

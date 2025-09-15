@@ -1,0 +1,24 @@
+/* style.css */
+body {
+    font-family: 'Prompt', sans-serif;
+}
+
+/* Custom pill styling for visual representation */
+.pill { width: 24px; height: 24px; border-radius: 9999px; display: inline-block; margin: 2px; }
+.pill-1 { background-color: #E5E7EB; border: 1px solid #D1D5DB; } /* Color for 1mg pill */
+.pill-2 { background-color: orange; }
+.pill-3 { background-color: skyblue; }
+.pill-5 { background-color: pink; }
+.pill-half-left {
+    width: 24px; height: 24px;
+    border-radius: 9999px;
+    display: inline-block;
+    margin: 2px;
+    clip-path: inset(0 50% 0 0);
+}
+
+/* Custom theme for checkbox & radio */
+input[type="checkbox"], 
+input[type="radio"] {
+  accent-color: #2deb27 !important; /* green */
+}
