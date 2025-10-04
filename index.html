@@ -26,23 +26,26 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 p-4 sm:p-6 font-prompt">
+<body class="bg-stone-700 p-4 sm:p-6 font-prompt">
 
   <div class="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg relative">
 
     <!-- Badge -->
-    <div class="absolute top-7 right-7">
+   <!--  <div class="absolute top-7 right-7">
       <span class="bg-yellow-100 text-blck-700 text-xs font-semibold px-2.5 py-1 rounded-lg">
         Warfarin Clinic RJ2
       </span>
-    </div>
+    </div> -->
 
     <!-- Title -->
-    <h1 class="text-2xl font-bold mb-6 text-center text-white bg-red-700 p-4 rounded-xl shadow">
+    <h1 class="text-3xl font-bold mb-6 text-center text-white bg-gradient-to-r from-red-800 to-red-800 p-5 rounded-xl shadow-lg">
       Warfarin Calculator Program
     </h1>
 
     <!-- Embedded Canva -->
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">
+        ตารางการจัดการ
+      </label>
     <div class="max-w-4xl mx-auto mb-6">
       <div class="relative w-full pt-[56.25%] shadow-md rounded-lg overflow-hidden">
         <iframe 
@@ -70,8 +73,8 @@
         </label>
         <input 
           type="number" id="previousDoseInput"
-          class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          step="0.1" min="0"
+          class="w-full border border-gray-300 px-4 py-3 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          step="0.5" min="0"
         >
       </div>
       <div>
@@ -80,8 +83,8 @@
         </label>
         <input 
           type="number" id="weeklyDoseInput"
-          class="w-full border border-gray-300 px-3 py-2 rounded-lg bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600"
-          step="0.1" min="0"
+          class="w-full border border-gray-300 px-4 py-3 rounded-lg bg-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200"
+          step="0.5" min="0"
         >
       </div>
       <div class="flex items-center pt-4 md:pt-7">
@@ -137,11 +140,11 @@
 
     <!-- Special Day Pattern -->
     <div class="my-4 pt-2">
-      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">รูปแบบวัน</label>
+      <label class="block text-gray-700 text-sm font-bold mb-2 text-center">รูปแบบการจัดวัน</label>
       <div class="flex justify-center gap-x-4 sm:gap-x-8">
         <div class="flex items-center">
           <input type="radio" id="patternFriSun" name="specialDayPattern" value="fri-sun" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600" checked>
-          <label for="patternFriSun" class="ml-2 text-gray-700">ศุกร์/เสาร์/อาทิตย์ (ค่าเริ่มต้น)</label>
+          <label for="patternFriSun" class="ml-2 text-gray-700">รูปแบบมาตรฐาน (ค่าเริ่มต้น)</label>
         </div>
         <div class="flex items-center">
           <input type="radio" id="patternMonWedFri" name="specialDayPattern" value="mon-wed-fri" class="form-radio h-4 w-4 text-blue-600 accent-indigo-600">
